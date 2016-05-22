@@ -13,4 +13,4 @@ while (co.next()) {
 	} 
 }
  
-current.addEncodedQuery('sys_idIN'+locIDs);
+gFile.addEncodedQuery('sys_idIN'+locIDs);  //some made up var
