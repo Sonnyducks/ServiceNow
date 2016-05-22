@@ -1,3 +1,5 @@
+//Example AJAX call to get number of related incidents for a change.
+
 //Client Script: 
 function onLoad() { 
  
