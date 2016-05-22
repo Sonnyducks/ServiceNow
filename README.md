@@ -1,3 +1,2 @@
 # ServiceNow
-Useful ServiceNow scripts
-for reuse
+Useful ServiceNow scripts by Sonnyducks
