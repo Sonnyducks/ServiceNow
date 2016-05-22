@@ -1,3 +1,3 @@
 # ServiceNow
 Useful ServiceNow scripts
-For Reuse
+for reuse
