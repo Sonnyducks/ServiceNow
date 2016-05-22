@@ -22,14 +22,14 @@ var ChangeManagementRelatedRecords = Class.create();
 ChangeManagementRelatedRecords.prototype = Object.extendsObject(AbstractAjaxProcessor, { 
     
 getIncidentCount: function() { 
-       var changeID = this.getParameter('sysparm_change_id'); 
-   var incident = new GlideRecord('incident'); 
-   incident.addQuery('rfc', changeID); 
-   incident.query(); 
-   return incident.getRowCount() 
-   }, 
+ var changeID = this.getParameter('sysparm_change_id'); 
+ var incident = new GlideRecord('incident'); 
+ incident.addQuery('rfc', changeID); 
+ incident.query(); 
+ return incident.getRowCount() 
+}, 
   
-   _privateFunction: function() { // this function is not client callable      
+   _privateFunction: function() { // this function is not client callable      
   
    } 
   
