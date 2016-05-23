@@ -1,6 +1,5 @@
 //USE:  Check if a change is scheduled to happen before the next change control meeting (Wednesday in this example
-//Test Code
-
+//Test Code...change dates to something recent
 var submit = new GlideDateTime("2015-11-01 08:00:00"); 
 var planStart = new GlideDateTime("2015-11-04 15:00:00"); 
 var changeCutoff = getChangeCutoffDate(submit); 
