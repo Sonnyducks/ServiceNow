@@ -1,4 +1,5 @@
 //Use: Fix script, to update all email domains in the user table 
+//match, relace using regular expression
  
 var usr = new GlideRecord('sys_user'); 
 usr.addEncodedQuery('emailLIKEbad_domain.com'); 
