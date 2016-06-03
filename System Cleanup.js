@@ -4,7 +4,7 @@ purgeTable('new_call');
 purgeTable('task_sla');
 purgeTable('sys_watermark');
 purgeTable('sys_email');
-purgeTable('sys_audit');
+//purgeTable('sys_audit');
 
 //reset counters
 resetCounter('task', 20001);
