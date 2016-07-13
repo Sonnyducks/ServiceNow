@@ -1,0 +1,25 @@
+
+<j:jelly xmlns:g="glide" xmlns:g2="null" xmlns:j="jelly:core" xmlns:j2="null" trim="false">
+<g:evaluate expression="gs.generateGUID(this);" var="jvar_guid"/>
+<j:set value="show_on_call_${jvar_guid}:${ref}" var="jvar_n"/>
+<span alt="${gs.getMessage('Show group on-call schedule')}" class="btn btn-default icon-date-time" id="${jvar_n}" onclick="showOnCallSchedule('${ref}')" tabindex="0" title="${gs.getMessage('Show group on-call schedule')}">
+<span class="sr-only">${gs.getMessage('Show group on-call schedule')}</span>
+</span>
+<script>
+function showOnCallSchedule(reference){ 
+	//Get the current group 
+	var group = g_form.getValue(reference.split('.')[1]); 
+
+	//Query to see if an on-Call rotation exists 
+	var grpRota = new GlideRecord('cmn_rota'); 
+	grpRota.addQuery('group', group); 
+	grpRota.addQuery('active', true); grpRota.query(); 
+	if(grpRota.hasNext()){ 
+		//Construct a URL for the popup window 
+		var url = 'show_schedule.do?sysparm_type=roster$[AMP]sysparm_zoom=weekly$[AMP]sysparm_group_id=' + group; //Open the popup popupOpenStandard(url); 
+	} else { 
+		alert('No active rotation specified for the selected group.'); 
+	} 
+}
+</script>
+</j:jelly>
