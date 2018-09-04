@@ -1,0 +1,16 @@
+//This was used to 'Reboot a Change'
+
+//reset workflow
+new Workflow().restartWorkflow(current, false);
+
+//remove all approvals
+var approvals = new GlideRecord('sysapproval_approver');
+approvals.addQuery('document_id', current.sys_id);   
+approvals.deleteMultiple();
+
+//update change
+current.comments = 'Change reset by user.';
+current.state = -12;
+current.update();
+//action.setRedirectURL(current);
+gs.addInfoMessage('Workflow has been reset. All approvals have been deleted.');
