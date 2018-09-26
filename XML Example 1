@@ -1,0 +1,27 @@
+try {
+	
+	var test = "<locations><location><name>Dallas</name><id>11111</id></location><location><name>Frisco</name><id>22222</id></location><location><name>Rockwall</name><id>33333</id></location></locations>";
+	
+	
+	var xmlDoc = new XMLDocument2();
+	xmlDoc.parseXML(test);
+	
+	//var node = xmlDoc.getNode('//locations');
+	var node = xmlDoc.getDocumentElement();
+	var loc = node.getChildNodeIterator();
+	
+	gs.print(node);
+	
+	while (loc.hasNext()) {
+		var n = loc.next();
+		var rec = new XMLDocument2();
+		rec.parseXML(n);
+		
+		var location = rec.getNode('//name').getTextContent();
+		gs.print('DEBUG: ' + location);
+	}
+	
+}
+catch(ex) {
+	var message = ex.getMessage();
+}
