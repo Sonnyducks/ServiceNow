@@ -11,7 +11,7 @@ function onLoad() {
   ga.getXML(GetRelatedIncidentCount); 
  
   function GetRelatedIncidentCount(response) { 
-    var answer = response.responseXML.documentElement.getAttribute("answer"); 
+    var results = JSON.parse(answer);
     alert('Related Incidents: ' + answer); 
   } 
 } 
@@ -22,11 +22,16 @@ var ChangeManagementRelatedRecords = Class.create();
 ChangeManagementRelatedRecords.prototype = Object.extendsObject(AbstractAjaxProcessor, { 
     
 getIncidentCount: function() { 
+ 
  var changeID = this.getParameter('sysparm_change_id'); 
  var incident = new GlideRecord('incident'); 
  incident.addQuery('rfc', changeID); 
  incident.query(); 
- return incident.getRowCount() 
+ 
+ var results = {};
+ results.row_count = incident.getRowCount();
+ 
+ return JSON.stringify(results);
 }, 
   
    _privateFunction: function() { // this function is not client callable      
