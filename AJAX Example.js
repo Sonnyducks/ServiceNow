@@ -12,7 +12,7 @@ function onLoad() {
  
   function GetRelatedIncidentCount(response) { 
     var results = JSON.parse(answer);
-    alert('Related Incidents: ' + answer); 
+    alert('Related Incidents: ' + results.row_count); 
   } 
 } 
  
