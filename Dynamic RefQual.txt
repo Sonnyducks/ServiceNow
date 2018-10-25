@@ -1,0 +1,14 @@
+//Reference Qualifiers
+
+
+Category (u_category)
+Reference: Choice (sys_choice)
+Use ref qual: Advanced
+javascript:"inactive=false^name=" + current.u_table.name + "^element=category^EQ"
+
+Subcategory(u_subcategory)
+Reference: Choice (sys_choice)
+Use ref qual: Advanced
+javascript:"name=" + current.u_table.name + "^element=subcategory^dependent_value=" + current.u_category.value + "^inactive=false"
+
+
