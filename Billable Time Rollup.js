@@ -1,3 +1,8 @@
+//location:  time_card table
+//use:  use to calculate billable hours and billable percentage of a time sheet.  billable hours and billable percent fields will need to be added to the time_sheet table.
+//condition:  when total or "category" (custom field changes).   If using a billable checkbox then adjust script below accordingly.
+
+
 setBillableFields(current.time_sheet.sys_id);
 	
 	function setBillableFields(tsID) {
