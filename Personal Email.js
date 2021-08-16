@@ -1,5 +1,6 @@
     //use in a business rule on the sys_email table for Outbox inserts.
     //needs HR module/HR Profileds installed.  If not, update accordingly.
+    //needs custom field for 'Email Preference' on the HR table also
     
     var original = current.recipients;
     var modArray = [];
