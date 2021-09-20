@@ -1,4 +1,4 @@
-	// Go-Live Date can't be a Date in the past
+// Go-Live Date can't be a Date in the past
     if (isLoading || newValue === '') {
         return;
     }
