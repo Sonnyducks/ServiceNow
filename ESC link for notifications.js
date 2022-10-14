@@ -1,3 +1,6 @@
+//NOTE:  this URL is for HR Cases.  
+//ENHANCEMENT:  Need to adjust for other ticket types.
+
 (function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
 
 /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
