@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <hint/>
+        <name>Workflow</name>
+        <order/>
+        <roles>admin,workflow_admin,workflow_creator,workflow_publisher</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-16 15:35:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1147c8cc07f43110efd5fe4f7c1ed079</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Workflow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="POC" source="d2c9f37b07a43110efd5fe4f7c1ed006">d2c9f37b07a43110efd5fe4f7c1ed006</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="POC">d2c9f37b07a43110efd5fe4f7c1ed006</sys_scope>
+        <sys_update_name>sys_ui_application_1147c8cc07f43110efd5fe4f7c1ed079</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-16 15:35:23</sys_updated_on>
+    </sys_ui_application>
+</record_update>

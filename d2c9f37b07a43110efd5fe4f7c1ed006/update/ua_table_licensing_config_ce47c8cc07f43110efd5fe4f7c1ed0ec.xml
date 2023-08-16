@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="INSERT_OR_UPDATE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>u_tab1</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-16 15:35:26</sys_created_on>
+        <sys_id>ce47c8cc07f43110efd5fe4f7c1ed0ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_tab1</sys_name>
+        <sys_package display_value="POC" source="d2c9f37b07a43110efd5fe4f7c1ed006">d2c9f37b07a43110efd5fe4f7c1ed006</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="POC">d2c9f37b07a43110efd5fe4f7c1ed006</sys_scope>
+        <sys_update_name>ua_table_licensing_config_ce47c8cc07f43110efd5fe4f7c1ed0ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-16 15:35:26</sys_updated_on>
+    </ua_table_licensing_config>
+</record_update>

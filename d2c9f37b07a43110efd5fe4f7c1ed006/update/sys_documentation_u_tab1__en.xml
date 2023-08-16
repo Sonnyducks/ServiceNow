@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="tab1" language="en" table="u_tab1">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>tab1</label>
+            <language>en</language>
+            <name>u_tab1</name>
+            <plural>tab1s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-08-16 15:35:25</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>tab1</sys_name>
+            <sys_package display_value="POC" source="d2c9f37b07a43110efd5fe4f7c1ed006">d2c9f37b07a43110efd5fe4f7c1ed006</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="POC">d2c9f37b07a43110efd5fe4f7c1ed006</sys_scope>
+            <sys_update_name>sys_documentation_u_tab1__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-08-16 15:35:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
