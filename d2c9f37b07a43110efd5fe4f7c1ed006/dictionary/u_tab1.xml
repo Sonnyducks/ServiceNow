@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="9007488c07f43110efd5fe4f7c1ed085" label="tab1" max_length="40" name="u_tab1" type="collection"/>
+    <element db_object_id="9007488c07f43110efd5fe4f7c1ed085" label="tab1" max_length="40" name="u_tab1" type="collection">
+        <element function_definition="null" function_field="true" label="Date" max_length="40" name="u_date" read_only="true" type="glide_date_time"/>
+    </element>
 </database>
