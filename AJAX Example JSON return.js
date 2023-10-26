@@ -19,7 +19,7 @@ function onChange(control, oldValue, newValue, isLoading) {
 
 function updateSupervisorFields(answer) {
     if (answer) {
-        var supervisorInfo = JSON.parse(answer);
+        var supervisorInfo = JSON.parse(answer);   //returning JSON, must parse.
 
         (supervisorInfo.email ?
             g_form.setValue('supervisor_email', supervisorInfo.email) :
