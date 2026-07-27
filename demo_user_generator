@@ -1,0 +1,97 @@
+/**
+ * Demo User Generator - ServiceNow Fix Script / Background Script
+ * Creates clearly-fake sys_user records for demos.
+ * Run in: System Definition > Fix Scripts, or Scripts - Background
+ * Cleanup script included at the bottom.
+ */
+
+(function createDemoUsers() {
+
+    var USER_COUNT = 10;
+    var USER_PREFIX = 'demo.';          // makes demo users easy to find/delete
+    var EMAIL_DOMAIN = 'example.com';   // reserved domain, never routes mail
+
+    var firstNames = ['Avery', 'Jordan', 'Riley', 'Morgan', 'Casey',
+                      'Quinn', 'Rowan', 'Skyler', 'Emerson', 'Finley',
+                      'Harper', 'Dakota', 'Reese', 'Sawyer', 'Tatum'];
+
+    var lastNames = ['Testerson', 'Demoson', 'Sampleton', 'Mockwell',
+                     'Faketon', 'Placeholder', 'Stubbins', 'Dummydale',
+                     'Trialsmith', 'Sandboxer'];
+
+    var departments = ['IT', 'HR', 'Finance', 'Facilities', 'Sales'];
+    var titles = ['Analyst', 'Specialist', 'Coordinator', 'Manager', 'Technician'];
+
+    var created = 0;
+
+    for (var i = 0; i < USER_COUNT; i++) {
+        var firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+        var lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+        var userName = USER_PREFIX + firstName.toLowerCase() + '.' + lastName.toLowerCase() + '.' + i;
+
+        // Skip if this user_name already exists (idempotent re-runs)
+        var check = new GlideRecord('sys_user');
+        check.addQuery('user_name', userName);
+        check.setLimit(1);
+        check.query();
+        if (check.hasNext()) {
+            continue;
+        }
+
+        var user = new GlideRecord('sys_user');
+        user.initialize();
+        user.setValue('user_name', userName);
+        user.setValue('first_name', firstName);
+        user.setValue('last_name', lastName);
+        user.setValue('email', userName + '@' + EMAIL_DOMAIN);
+        user.setValue('title', titles[Math.floor(Math.random() * titles.length)]);
+        user.setValue('phone', '555-01' + ('0' + i).slice(-2) ); // 555-01XX reserved fictional range
+        user.setValue('active', true);
+        user.setValue('notification', 1); // 1 = Disable notifications (2 = Enable)
+        user.setValue('locked_out', false);
+        user.setValue('city', 'DEMO_DATA'); // cleanup tag
+
+        // Optional: assign to a department if it exists
+        var deptName = departments[Math.floor(Math.random() * departments.length)];
+        var dept = new GlideRecord('cmn_department');
+        dept.addQuery('name', deptName);
+        dept.setLimit(1);
+        dept.query();
+        if (dept.next()) {
+            user.setValue('department', dept.getUniqueValue());
+        }
+
+        // setWorkflow(false) skips business rules/notifications on insert.
+        // Remove this line if you WANT your demo to show onboarding automation.
+        user.setWorkflow(false);
+
+        var sysId = user.insert();
+        if (sysId) {
+            created++;
+            gs.info('Created demo user: ' + userName + ' (' + sysId + ')');
+        }
+    }
+
+    gs.info('Demo user generation complete. Created ' + created + ' users.');
+
+})();
+
+
+/**
+ * ============ CLEANUP SCRIPT ============
+ * Run separately when the demo is over.
+ * Deletes only users matching BOTH the prefix and the tag,
+ * so a typo can't wipe real accounts.
+ */
+/*
+(function deleteDemoUsers() {
+    var gr = new GlideRecord('sys_user');
+    gr.addQuery('user_name', 'STARTSWITH', 'demo.');
+    gr.addQuery('city', 'DEMO_DATA');
+    gr.query();
+    var count = gr.getRowCount();
+    gr.setWorkflow(false); // skip cascade business rules on delete
+    gr.deleteMultiple();
+    gs.info('Deleted ' + count + ' demo users.');
+})();
+*/
